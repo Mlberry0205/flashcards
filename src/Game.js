@@ -35,7 +35,8 @@ class Game {
   }
 
   startNewRound() {
-    let newDeck = this.addCardsToDeck
+    let newDeck = this.createCards();
+    let newRound = new Round(newDeck);
   }
 
   start() {

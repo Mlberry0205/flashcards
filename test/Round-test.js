@@ -68,10 +68,6 @@ it('should calculate the percentage of correct guessses at the end of the game',
   expect(round.calculatePercentCorrect()).to.equal(33.33);
 });
 
-it('should take in correct and incorrect guesses', () => {
-  expect(round.takeTurn('pug')).to.equal('INCORRECT!!!');
-});
-
 
 it('should calculate the percentage of correct guessses at the end of the game', () => {
 
