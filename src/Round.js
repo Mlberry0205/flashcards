@@ -6,14 +6,21 @@ class Round {
         this.deck = deck;
         this.turns = 0;
         this.incorrectGuesses = [];
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2b506c223526ac81c689a8f5054b7d376c180d14
     }
 
     returnCurrentCard() {
         return this.deck.cards[0];
 
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2b506c223526ac81c689a8f5054b7d376c180d14
     takeTurn(guess) {
         let cardOne = this.returnCurrentCard();
         let turn = new Turn(guess, cardOne)
@@ -29,7 +36,6 @@ class Round {
         }
         return turn.giveFeedback();
     }
-
     calculatePercentCorrect() {
         let num = this.turns - this.incorrectGuesses.length;
         let percentCorrect = parseFloat(((num / this.turns) * 100).toFixed(2));
@@ -37,6 +43,7 @@ class Round {
 
     }
 
+<<<<<<< HEAD
     endRound() {
       let percentCorrect = this.calculatePercentCorrect();
       console.log(`** Round over! ** You answered ${33.33}% of the questions correctly!`);
@@ -46,3 +53,8 @@ class Round {
 
 
 module.exports = Round;
+=======
+}
+
+module.exports = Round;
+>>>>>>> 2b506c223526ac81c689a8f5054b7d376c180d14
