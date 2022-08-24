@@ -13,7 +13,6 @@ class Round {
         return this.deck.cards[0];
 
     }
-
     takeTurn(guess) {
         let cardOne = this.returnCurrentCard();
         let turn = new Turn(guess, cardOne)
@@ -41,5 +40,6 @@ class Round {
       return `** Round over! ** You answered ${33.33}% of the questions correctly!`;
     }
 };
+
 
 module.exports = Round;
