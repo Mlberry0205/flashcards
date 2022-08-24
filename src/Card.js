@@ -6,12 +6,7 @@ class Card {
         this.possibleAnswers = possibleAnswers;
         this.correctAnswer = correctAnswer;
     }
-}
-
-
-
-
-
+};
 
 
 

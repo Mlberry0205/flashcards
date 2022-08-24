@@ -1,4 +1,4 @@
-# FlashCards Project 
+# FlashCards Project
 
 In this project, I was asked to write a program to simulate a set of flash cards through the command line! 😱  Once the project is finished, users will be able to see the questions, take guesses, and see a final score at the end of the round.
 
@@ -9,7 +9,7 @@ In this project, I was asked to write a program to simulate a set of flash cards
 - TDD, Mocha, Chai
 
 ## Project Goals/and Future Features
-- With mre time, I would love to make this a full functioning game for a user to play.
+- With more time, I would love to make this a full functioning game for a user to play.
 - I would love to add a timer for the users
 
 # Contributor
@@ -41,5 +41,3 @@ npm test
 ```
 
 The test results will output to the terminal.
-
-
