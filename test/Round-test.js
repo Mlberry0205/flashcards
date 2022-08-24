@@ -46,21 +46,7 @@ it('Each time a player takes a turn, the turn increments by 1', () => {
    expect(round.turns).to.equal(1)
    round.takeTurn()
    expect(round.turns).to.equal(2)
-
-it('Each time a player takes a turn, the turn increments by 1', () => {
-   expect(round.turns).to.equal(0);
-   round.takeTurn();
-   expect(round.turns).to.equal(1);
-  });
-
-
 });
-
-it('Each time a player takes a turn, the turn increments by 1', () => {
-   expect(round.turns).to.equal(0);
-   round.takeTurn();
-   expect(round.turns).to.equal(1);
-  });
 
 it('should return a current card', () => {
     expect(round.returnCurrentCard()).to.equal(round.deck.cards[0]);
@@ -81,11 +67,6 @@ it('should calculate the percentage of correct guessses at the end of the game',
 
   expect(round.calculatePercentCorrect()).to.equal(33.33);
 });
-
-it('should end the round with the percentage of correct answers', () => {
-  expect(round.endRound()).to.equal('** Round over! ** You answered 33.33% of the questions correctly!')
-});
-
 
 it('should take in correct and incorrect guesses', () => {
   expect(round.takeTurn('pug')).to.equal('INCORRECT!!!');
