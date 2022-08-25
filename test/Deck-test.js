@@ -37,7 +37,7 @@ it('should have cards in the deck', () => {
   });
 
 it('should know how many cards are in the deck', () => {
-    expect(deck.cardCounter()).to.equal(3);
+    expect(deck.countCards()).to.equal(3);
   });
 
 });

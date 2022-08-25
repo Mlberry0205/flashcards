@@ -11,7 +11,7 @@ describe('Round', () => {
   let card1;
   let card2;
   let card3;
-  let cardsForDeck;
+  //let cardsForDeck;
   let deck1;
   let round;
 
@@ -21,8 +21,8 @@ describe('Round', () => {
    card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
 
    card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
-   cardsForDeck = [card1, card2, card3];
-   deck1 = new Deck(cardsForDeck);
+   //cardsForDeck = [card1, card2, card3];
+   deck1 = new Deck([card1, card2, card3]);
    round = new Round(deck1);
 
  });
@@ -42,14 +42,15 @@ it('should be able to take in a deck of cards', () => {
 
 
 it('Each time a player takes a turn, the turn increments by 1', () => {
-  round.takeTurn()
+   expect(round.turns).to.equal(0)
+   round.takeTurn()
    expect(round.turns).to.equal(1)
    round.takeTurn()
    expect(round.turns).to.equal(2)
 });
 
 it('should return a current card', () => {
-    expect(round.returnCurrentCard()).to.equal(round.deck.cards[0]);
+    expect(round.returnCurrentCard()).to.equal(card1);
   });
 
 

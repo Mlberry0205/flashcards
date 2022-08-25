@@ -1,6 +1,6 @@
-const data = require('./data');
+const data = require('../src/data');
 const prototypeQuestions = data.prototypeData;
-const util = require('./util');
+const util = require('../src/util');
 
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
@@ -11,18 +11,9 @@ class Game {
     this.currentRound = null;
   }
 
-  printMessage(deck, round) {
-    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
------------------------------------------------------------------------`)
-  }
-
-  printQuestion(round) {
-      util.main(round);
-  }
-
   createCards() {
     let cardsForDeck = prototypeQuestions.map((card) => {
-      return new Card(card.id, card.question, card.possibleAnswers, card.correctAnswer)
+      return new Card(card.id, card.question, card.answers, card.correctAnswer)
     });
 
     return cardsForDeck;
@@ -37,15 +28,28 @@ class Game {
   startNewRound() {
     let newDeck = this.createCards();
     let newRound = new Round(newDeck);
+    this.currentRound = newRound
+    return newRound;
+  }
+
+  returnCurrentRound() {
+    return this.currentRound;
   }
 
   start() {
-    //method that starts everything...
-    createCards()
-    addCardsToDeck()
-    startNewRound(deck)
-    printMessage()
-    printQuestion()
+
+    this.startNewRound();
+    this.printMessage(this.addCardsToDeck(), this.startNewRound());
+    this.printQuestion(this.currentRound);
+  }
+
+  printMessage(deck, round) {
+    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
+-----------------------------------------------------------------------`)
+  }
+
+  printQuestion(round) {
+      util.main(round);
   }
 }
 
