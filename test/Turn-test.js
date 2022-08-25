@@ -1,6 +1,5 @@
 const chai = require('chai');
 const expect = chai.expect;
-
 const Card = require('../src/Card');
 const Turn = require('../src/Turn');
 
@@ -12,13 +11,13 @@ describe('Turn', () => {
 
     beforeEach( () => {
 
-       card1 = new Card(1, "What is Morgan's favorite state to visit?", ["Cali", "Vermont", "Montana"], "Vermont")
-        turn = new Turn("Vermont", card1)
-        turn2 = new Turn("Montana", card1)
+      card1 = new Card(1, "What is Morgan's favorite state to visit?", ["Cali", "Vermont", "Montana"], "Vermont");
+      turn = new Turn("Vermont", card1);
+      turn2 = new Turn("Montana", card1);
 
     });
 
-    it('should be a function', function() {
+    it('should be a function', () => {
         expect(Turn).to.be.a('function');
     });
 

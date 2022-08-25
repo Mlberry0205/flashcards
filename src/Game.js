@@ -1,7 +1,6 @@
 const data = require('../src/data');
 const prototypeQuestions = data.prototypeData;
 const util = require('../src/util');
-
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
@@ -12,17 +11,16 @@ class Game {
   }
 
   createCards() {
-    let cardsForDeck = prototypeQuestions.map((card) => {
+    let cardsForDeck = prototypeQuestions.map(card => {
       return new Card(card.id, card.question, card.answers, card.correctAnswer)
     });
-
-    return cardsForDeck;
+      return cardsForDeck;
   }
 
   addCardsToDeck() {
     let cards = this.createCards();
     let newDeck = new Deck(cards);
-    return newDeck
+    return newDeck;
   }
 
   startNewRound() {
@@ -37,7 +35,6 @@ class Game {
   }
 
   start() {
-
     this.startNewRound();
     this.printMessage(this.addCardsToDeck(), this.startNewRound());
     this.printQuestion(this.currentRound);
@@ -52,7 +49,6 @@ class Game {
       util.main(round);
   }
 }
-
 
 
 module.exports = Game;
